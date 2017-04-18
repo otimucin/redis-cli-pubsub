@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <script src="/jquery/dist/jquery.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <h1>Hello World!</h1>
+    <div id="future"></div>
+</body>
+<script>
+    var socket = io.connect('http://localhost:3500');
+    socket.on('broad', function (data) {
+        $('#future').append(data + "<br/>");
+    });
+
+</script>
+
+</html>
